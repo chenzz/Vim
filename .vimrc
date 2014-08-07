@@ -16,6 +16,9 @@ syntax on
 "File type based indentation.
 filetype plugin indent on
 
+"Don't indent when input public/private.
+set cinoptions=g-1
+
 "第一行设置tab键为4个空格，第二行设置当行之间交错时使用4个空格
 set tabstop=4
 set shiftwidth=4
