@@ -46,10 +46,10 @@ set splitright
 "shield F1
 map <F1> <Esc>
 
-"用gedit打开文件
-map <F8> : !gedit % <CR>
 
-"自动编译运行
+"快捷键
+map <F7> : !gedit % <CR>
+map <F8> : !gdb a.out
 map <F9> : !gcc % -g && ./a.out <CR>
 map <F10> : !g++ % -std=c++11 -g  && ./a.out <CR>
 
