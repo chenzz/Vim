@@ -50,7 +50,7 @@ map <F1> <Esc>
 map <F8> : !gedit % <CR>
 
 "自动编译运行
-map <F9> : !gcc % && ./a.out <CR>
-map <F10> : !g++ -std=c++11 % && ./a.out <CR>
+map <F9> : !gcc % -g && ./a.out <CR>
+map <F10> : !g++ % -std=c++11 -g  && ./a.out <CR>
 
 
