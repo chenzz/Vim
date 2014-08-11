@@ -48,8 +48,7 @@ map <F1> <Esc>
 
 
 "快捷键
-map <F7> : !gedit % <CR>
-map <F8> : !gdb a.out
+map <F8> : !gedit % <CR>
 map <F9> : !gcc % -g && ./a.out <CR>
 map <F10> : !g++ % -std=c++11 -g  && ./a.out <CR>
 
