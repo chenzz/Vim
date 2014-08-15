@@ -45,7 +45,7 @@ set splitright
 
 "shield F1
 map <F1> <Esc>
-
+imap <F1> <Esc>
 
 "快捷键
 map <F8> : !gedit % <CR>
