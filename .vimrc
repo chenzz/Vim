@@ -49,7 +49,7 @@ imap <F1> <Esc>
 
 "快捷键
 map <F8> : !gedit % <CR>
-map <F9> : !gcc % -g && ./a.out <CR>
+map <F9> : !gcc % -std=c99 -g && ./a.out <CR>
 map <F10> : !g++ % -std=c++11 -g  && ./a.out <CR>
 
 
