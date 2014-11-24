@@ -3,6 +3,9 @@ func! MySys()
 endfunc
 
 if MySys() == "unix" || MySys() == "mac"
+	"set hilight matching bracket mathod
+	hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
+
 	"去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
 	set nocompatible
 
@@ -20,9 +23,6 @@ if MySys() == "unix" || MySys() == "mac"
 
 	"语法高亮度显示
 	syntax on
-
-	"File type based indentation.
-	filetype plugin indent on
 
 	"Don't indent when input public/private.
 	set cinoptions=g-1
@@ -70,6 +70,8 @@ if MySys() == "unix" || MySys() == "mac"
 			exec "!bash %"
 		elseif &filetype == 'python'
 			exec "!python %"
+		elseif &filetype == 'html'
+			exec "!google-chrome %"
 		endif
 	endfunc
 
@@ -78,31 +80,25 @@ if MySys() == "unix" || MySys() == "mac"
 		exec "w"
 		exec "!make && %<"
 	endfunc
-	"快捷键
-	map <F8> : !gedit % <CR>
-	map <F9> : !gcc % -std=c99 -g && ./a.out <CR>
-	map <F10> : !g++ % -std=c++11 -g  && ./a.out <CR>
 
 	"Vundle相关设置
 	" set the runtime path to include Vundle and initialize
 	set rtp+=~/.vim/bundle/Vundle.vim
 	call vundle#begin()
-	" alternatively, pass a path where Vundle should install plugins
-	"call vundle#begin('~/some/path/here')
 
-	" let Vundle manage Vundle, required
 	Plugin 'gmarik/Vundle.vim'
 	Plugin 'Lokaltog/vim-easymotion'
 
-	" All of your Plugins must be added before the following line
-	call vundle#end()            " required
-	filetype plugin indent on    " required
-	" To ignore plugin indent changes, instead use:
-	"filetype plugin on
+	call vundle#end()   
+	filetype indent on    " required
+	" To ignore plugin indent changes, instead use: filetype plugin on
 
 	"EasyMotion相关设置
 	"map <Leader> <Plug>(easymotion-prefix)
 	nmap s <Plug>(easymotion-s)
+
+	"html indent
+	let g:html_indent_inctags = "html, body, head, tbody"
 
 else  "windows
 endif
