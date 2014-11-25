@@ -83,19 +83,19 @@ if MySys() == "unix" || MySys() == "mac"
 
 	"Vundle相关设置
 	" set the runtime path to include Vundle and initialize
-	set rtp+=~/.vim/bundle/Vundle.vim
-	call vundle#begin()
+	"set rtp+=~/.vim/bundle/Vundle.vim
+	"call vundle#begin()
 
-	Plugin 'gmarik/Vundle.vim'
-	Plugin 'Lokaltog/vim-easymotion'
+	"Plugin 'gmarik/Vundle.vim'
+	"Plugin 'Lokaltog/vim-easymotion'
 
-	call vundle#end()   
+	"call vundle#end()   
 	filetype indent on    " required
 	" To ignore plugin indent changes, instead use: filetype plugin on
 
 	"EasyMotion相关设置
 	"map <Leader> <Plug>(easymotion-prefix)
-	nmap s <Plug>(easymotion-s)
+	"nmap s <Plug>(easymotion-s)
 
 	"html indent
 	let g:html_indent_inctags = "html, body, head, tbody"
