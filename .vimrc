@@ -3,8 +3,18 @@ func! MySys()
 endfunc
 
 if MySys() == "unix" || MySys() == "mac"
+
 	"set hilight matching bracket mathod
 	hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
+
+	"VIM内部编码
+    set encoding=utf-8
+    "当前编辑文件编码
+    set fileencoding=utf-8
+    "VIM打开文件支持的编码
+    set fileencodings=ucs-bom,utf-8,gbk,cp936,gb2312,big5,euc-jp,euc-kr,latin1
+    "设置终端编码为VIM内部编码encoding
+    let &termencoding=&encoding
 
 	"去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
 	set nocompatible
@@ -75,10 +85,16 @@ if MySys() == "unix" || MySys() == "mac"
 		endif
 	endfunc
 
-	map <F6> :call Make() <CR>"
+	map <F6> :call Make() <CR>
 	func! Make()
 		exec "w"
 		exec "!make && %<"
+	endfunc
+
+	map <F7> :call Servlet() <CR>
+	func! Servlet()
+		exec "w"
+		exec "!javac -classpath ../../lib/servlet-api.jar -d WEB-INF/classes %"
 	endfunc
 
 	"Vundle相关设置
@@ -90,8 +106,8 @@ if MySys() == "unix" || MySys() == "mac"
 	"Plugin 'Lokaltog/vim-easymotion'
 
 	"call vundle#end()   
-	filetype indent on    " required
-	" To ignore plugin indent changes, instead use: filetype plugin on
+	filetype indent plugin on    " required
+	set autoindent
 
 	"EasyMotion相关设置
 	"map <Leader> <Plug>(easymotion-prefix)
@@ -99,6 +115,4 @@ if MySys() == "unix" || MySys() == "mac"
 
 	"html indent
 	let g:html_indent_inctags = "html, body, head, tbody"
-
-else  "windows
 endif
