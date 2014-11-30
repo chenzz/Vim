@@ -94,7 +94,7 @@ if MySys() == "unix" || MySys() == "mac"
 	map <F7> :call Servlet() <CR>
 	func! Servlet()
 		exec "w"
-		exec "!javac -classpath ../../lib/servlet-api.jar -d WEB-INF/classes %"
+		exec "!javac -d WEB-INF/classes %"
 	endfunc
 
 	"Vundle相关设置
