@@ -97,15 +97,28 @@ if MySys() == "unix" || MySys() == "mac"
 		exec "!javac -d WEB-INF/classes %"
 	endfunc
 
+
+	" 修改leader键
+	let mapleader = ','
+	let g:mapleader = ','
+
 	"Vundle相关设置
 	" set the runtime path to include Vundle and initialize
-	"set rtp+=~/.vim/bundle/Vundle.vim
-	"call vundle#begin()
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
 
-	"Plugin 'gmarik/Vundle.vim'
-	"Plugin 'Lokaltog/vim-easymotion'
+	Plugin 'gmarik/Vundle.vim'
+	Plugin 'scrooloose/syntastic'
+	Plugin 'Raimondi/delimitMate'		"括号配对
+	"Plugin 'scrooloose/nerdtree'		"目录树
+	"Plugin 'docunext/closetag.vim'		"html/xml标签配对
+	"Plugin 'scrooloose/nerdcommenter'	"快速注释
+	"Plugin 'junegunn/vim-easy-align'	"语句对齐
+	"Plugin 'Lokaltog/vim-easymotion'	"语句跳转
+	"Plugin 'Valloric/YouCompleteMe'
 
-	"call vundle#end()   
+	call vundle#end()   
+
 	filetype indent plugin on    " required
 	set autoindent
 
